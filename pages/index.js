@@ -12,7 +12,7 @@ export default function Home() {
         <title>WebStudio | Web and App Agency</title>
         <meta
           name="description"
-          content="I’m a Full-Stack Website Developer who bring Ideas into Execution"
+          content="We’re a Website and App Development Agency who bring Ideas into Execution"
         />
         <link rel="icon" href="/fav.png" />
       </Head>
