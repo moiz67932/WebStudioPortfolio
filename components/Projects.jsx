@@ -54,7 +54,7 @@ const Projects = () => {
           <ProjectItem
             title="Business Dashboard"
             backgroundImg={dashboard}
-            projectUrl="/metaversus"
+            projectUrl="/dashboard"
             tech="React JS"
           />
 
