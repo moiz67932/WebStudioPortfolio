@@ -1,15 +1,31 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiOutlineMail } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
 const Main = () => {
+    const [ipAddress, setIpAddress] = useState("");
+
+  useEffect(() => {
+    // Fetch the IP address when the component mounts
+    const fetchIpAddress = async () => {
+      try {
+        const response = await fetch("https://api.ipify.org?format=json");
+        const data = await response.json();
+        setIpAddress(data.ip);
+      } catch (error) {
+        console.error("Error fetching IP address:", error);
+      }
+    };
+
+    fetchIpAddress();
+  }, []);
   return (
     <div id='home' className=' w-full h-screen text-center mt-6'>
       <div className='max-w-[1100px] bg-slate-300 w-full h-[80%] mx-auto p-2 flex justify-center items-center shadow-xl shadow-gray-400 rounded-xl hover:scale-105 ease-in-out duration-500'>
         <div>
           <p className='uppercase text-sm tracking-widest text-gray-600'>
-            LET&#39;S BUILD SOMETHING TOGETHER
+            <p>The IP Address is {ipAddress}</p>
           </p>
           <h1 className='py-4 text-gray-700'>
             Welcome To <span className='text-[#5651e5]'> WebStudio</span>
